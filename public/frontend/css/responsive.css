@@ -1,0 +1,132 @@
+
+/*
+// Medium devices (tablets, 768px and up)
+============================================================*/
+@media (min-width: 768px) and (max-width: 991.98px) {
+	.mainbanner_content p{
+		width: 71%;
+	}
+	.section_title_1{
+	    width: 75%;
+	}
+	.profile_img.personal_video .iconround:before{
+		left: 6px;
+    	width: 80px;
+    	height: 80px;
+	}
+	.profile_img.personal_video a{
+		width: 50px;
+    	height: 50px;
+    	line-height: 53px;
+    	left: 46px;
+	}
+	.personal_video .video-popup i:before{
+		font-size: 20px;
+	}
+	.profile_img.personal_video .loader{
+		left: 17%;
+	}
+	.about_myskill h2{
+		font-size: 30px;
+	}
+	.counter h3{
+		font-size: 15px;
+	}
+	.blog_item{
+		margin-bottom: 30px;
+	}
+}
+
+/*
+// Small devices (landscape phones, 576px and up)
+============================================================*/
+@media (min-width: 576px) and (max-width: 767.98px) {
+	.mainbanner_content p{
+		width: 100%;
+	}
+	.section_title_1 {
+	    width: 100%;
+	}
+	.profile_img.personal_video .loader{
+		left: 15%;
+	}
+	.counter,.blog_item{
+		margin-bottom: 30px;
+	}
+	.filters ul li{
+		margin: 5px 10px
+	}
+	.profile_img.personal_video .iconround:before{
+		width: 130px;
+		height: 130px;
+		left: 20px;
+	}
+	.profile_img.personal_video a{
+		width: 90px;
+    	height: 90px;
+    	line-height: 100px;
+    	left: 84px;
+	}
+	.profile_img.personal_video .loader {
+	    left: 16%;
+	}
+	.skill-progress{
+		margin-top: 20px;
+	}
+	.contact_message{
+		margin-top: 50px;
+	}
+}
+
+/*
+// Extra small devices (portrait phones, less than 576px)
+============================================================*/
+@media (max-width: 575.98px) {
+	.mainbanner_content h1 {
+	    font-size: 26px;
+	    line-height: 34px;
+	}
+	.cd-words-wrapper b { 
+		font-size: 50px;
+}
+	.counter,.blog_item{
+		margin-bottom: 30px;
+	}
+	.banner_title {
+	    font-size: 20px;
+	}
+	.mainbanner_content p {
+	    font-size: 14px;
+	    letter-spacing: 1px;
+	    line-height: 21px;
+	    width: 100%;
+	}
+	.section_title_1 {
+	    width: 100%;
+	    font-size: 14px;
+	}
+	.section_title_1 .title{
+		font-size: 24px;
+    	line-height: 36px;
+	}
+	.skill-progress{
+		margin-top: 20px;
+	}
+	.profile_img.personal_video .iconround:before{
+		width: 100px;
+		height: 100px;
+		left: 7px;
+	}
+	.profile_img.personal_video a{
+		width: 70px;
+		height: 70px;
+		line-height: 80px;
+		left: 57px;
+	}
+	.profile_img.personal_video .loader{
+		left: 17%
+	}
+	.about_myskill h2{
+		font-size: 24px;
+	}
+}
