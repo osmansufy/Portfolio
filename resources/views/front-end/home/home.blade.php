@@ -583,8 +583,20 @@
         </div>
         <div class="row mt-5">
             <div class="col-lg-12">
+                @if(Session::get('message'))
+                    <div class="col-md-8 offset-2">
+                        <div class="alert alert-success alert-dismissible fade show" role="alert">
+                            <strong> {{Session::get('message')}}</strong>
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                    </div>
+
+                @endif
                 <div class="form-yours">
-                    <form>
+                    <form action="{{url('/')}}" method="post">
+                        @csrf
                         <div class="row">
                             <div class="col-lg-6">
                                 <div class="form-group mt-2">
@@ -613,9 +625,11 @@
                         </div>
                         <div class="row">
                             <div class="col-lg-12 text-right">
-                                <a href="#" class="animated fadeInDown delay-4s contact-button btn btn-custom">Submit</a>
+                                {{--<a href="#" class="animated fadeInDown delay-4s contact-button btn btn-custom">Submit</a>--}}
+                                <button type="submit" class="btn btn-primary">Save </button>
                             </div>
                         </div>
+
                     </form>
                 </div>
             </div>

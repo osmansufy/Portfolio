@@ -2,12 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Frontend;
-use App\Mail\ContactFormMail;
+use App\Testimonial;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Mail;
 
-class FrontendController extends Controller
+class TestimonialController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,7 +14,10 @@ class FrontendController extends Controller
      */
     public function index()
     {
-        return view('front-end.home.home');
+         $testimonials=Testimonial::all();
+        return view('back-end.testimonial.testimonial',[
+            'testimonials'=>$testimonials
+        ]);
     }
 
     /**
@@ -26,7 +27,7 @@ class FrontendController extends Controller
      */
     public function create()
     {
-
+        return view('back-end.testimonial.addTestimonial');
     }
 
     /**
@@ -37,24 +38,23 @@ class FrontendController extends Controller
      */
     public function store(Request $request)
     {
-        $data=$request->validate([
-            'name'=>'required',
-            'email'=>'required|email',
-            'comments'=>'required',
-        ]);
-//      return dd($request->all());
-Mail::send(new ContactFormMail($data));
-return redirect('/')->with('message','Thanks for Your mail');
+       $testimonials=New Testimonial();
+
+       $testimonials->name=$request->name;
+       $testimonials->designation=$request->designation;
+       $testimonials->comment=$request->comment;
+       $testimonials->status=$request->status;
+       $testimonials->save();
 
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Frontend  $frontend
+     * @param  \App\Testimonial  $testimonial
      * @return \Illuminate\Http\Response
      */
-    public function show(Frontend $frontend)
+    public function show(Testimonial $testimonial)
     {
         //
     }
@@ -62,10 +62,10 @@ return redirect('/')->with('message','Thanks for Your mail');
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Frontend  $frontend
+     * @param  \App\Testimonial  $testimonial
      * @return \Illuminate\Http\Response
      */
-    public function edit(Frontend $frontend)
+    public function edit(Testimonial $testimonial)
     {
         //
     }
@@ -74,10 +74,10 @@ return redirect('/')->with('message','Thanks for Your mail');
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Frontend  $frontend
+     * @param  \App\Testimonial  $testimonial
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Frontend $frontend)
+    public function update(Request $request, Testimonial $testimonial)
     {
         //
     }
@@ -85,10 +85,10 @@ return redirect('/')->with('message','Thanks for Your mail');
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Frontend  $frontend
+     * @param  \App\Testimonial  $testimonial
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Frontend $frontend)
+    public function destroy(Testimonial $testimonial)
     {
         //
     }
