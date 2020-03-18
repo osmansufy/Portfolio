@@ -25,6 +25,7 @@ Route::resource('services','ServicesController');
 Route::resource('categories','CategoryController');
 Route::resource('portfolios','PortfolioController');
 Route::resource('teams','TeamController');
+Route::resource('blog','BlogController');
 Route::resource('testimonials','TestimonialController');
 Route::get('unpublished-service/{id}','ServicesController@unpublished')->name('unpublished-service');
 Route::get('published-service/{id}','ServicesController@published')->name('published-service');

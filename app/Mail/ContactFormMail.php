@@ -30,7 +30,7 @@ public $data;
     public function build()
     {
         return $this->markdown('emails.contact.contact-form')
-            ->to('test@gmail.com')
+            ->to('osmansufy45@gmail.com')
             ->from('osmansufy20@gmail.com')
             ->subject('Contact-form');
     }
