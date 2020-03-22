@@ -26,6 +26,7 @@ Route::resource('categories','CategoryController');
 Route::resource('portfolios','PortfolioController');
 Route::resource('teams','TeamController');
 Route::resource('blog','BlogController');
+
 Route::resource('testimonials','TestimonialController');
 Route::get('unpublished-service/{id}','ServicesController@unpublished')->name('unpublished-service');
 Route::get('published-service/{id}','ServicesController@published')->name('published-service');
@@ -33,3 +34,8 @@ Route::get('unpublished-portfolio/{id}','PortfolioController@unpublished')->name
 Route::get('published-portfolio/{id}','PortfolioController@published')->name('published-portfolio');
 Route::get('unpublished-team/{id}','TeamController@unpublished')->name('unpublished-team');
 Route::get('published-team/{id}','TeamController@published')->name('published-team');
+Route::get('unpublished-post/{id}','BlogController@unpublished')->name('unpublished-post');
+Route::get('published-post/{id}','BlogController@published')->name('published-post');
+Route::get('footer','FooterController@index')->name('footer');
+Route::get('footer/edit','FooterController@edit')->name('footer/edit');
+Route::post('footer/save','FooterController@saveFooter')->name('footer/save');
